@@ -1,0 +1,160 @@
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ 
+/* 
+some tutorial make it *: , thats kinda wrong *:after is a sudo class,
+technically we're targetting all elements before and after default styles */
+
+
+/* //the p::after and p::before require the content:"" w/o it you wont see
+//also pls see this before and after whereever you're putting
+they'll appear (content) like p here elenent before and after of it */
+
+/* when you do 
+
+src="//unsplash.it/500/500" alt=""  gives you an image */
+
+/* and when dealing with image 
+like img::after or img::before just see that nothing will appear before they're the ::content
+so it means so differnt way img behaviour  IMAGES - IT WILL NOT WORK!!!*/
+/* these before and after element are inline by default ofc change it by display:block */
+
+
+.parent{
+  background: #ffde2a;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player{
+  background: #840931;
+  height: 200px;
+  width: 150px;
+  border: 10px solid #000;
+  border-bottom:none ;
+  border-radius: 60px 80px 0 0;
+  z-index: 1;
+}
+.player::after{
+  content: "";
+  position: fixed;
+  width: 13%;
+  height: 18%;
+  background-color: #ea1616;
+  border-radius: 58% 70% 28% 42% /28% 56% 88% 89%;
+}
+
+.legs{
+  height: 50px;
+  width:60px;
+  background-color: #840931;
+  position: absolute;
+  bottom: 35%;
+  left:42.2%;
+  border: 10px solid #000;
+  border-top: none;
+  border-radius: 0 0 22px 22px;
+
+  
+}
+
+.legs::before{
+  content: "";
+  height: 50px;
+  width:60px;
+  background-color: #840931;
+  position: absolute;
+  bottom: -24%;
+  left:200%;
+  border: 10px solid #000;
+  border-top: none;
+  border-radius: 0 0 22px 22px;
+
+}
+
+.legs:after{
+  content: "";
+  width: 10px;
+  height: 40px;
+  background-color: #000;
+  position: absolute;
+  top: -15px;
+  left: 60px;
+  border-radius: 0 0 10px 0;
+  rotate: 90deg;
+}
+
+.back{
+  height: 120px;
+  width: 35px;
+  background-color: #ea1616;
+  border: 10px solid black;
+  position: absolute;
+  left: 39.2%;
+  top:45%;
+  /* border-right:none ; */
+  border-radius: 20px 0 0 20px;
+}
+
+.back::before{
+  content: "";
+  position: absolute;
+  height: 74px;
+  width: 18px;
+  background-color: #840931;
+  bottom: -0.5px;
+  left: -1px;
+  border-radius:12px 0 0 8px ;
+}
+
+.glass{
+  height: 75px;
+  width: 110px;
+  background-color: #225381;
+  z-index: 2;
+  position: absolute;
+  top:45%;
+  left:50%;
+  border-radius: 25px 50px 30px 30px;
+  border:10px solid #000;
+}
+
+.glass::before{
+  content: "";
+  position: absolute;
+  width: 85%;
+  height: 65%;
+  background-color: #71d4ec;
+  border-radius: 0 28px 3px 30px;
+  right: 0;
+  top:0;
+}
+
+.glass::after{
+  content: "";
+  position: absolute;
+  width: 45%;
+  height: 22%;
+  background-color: #f7f7f7;
+  left: 38px;
+  top:1px;
+  border-radius: 10px;
+}
+
+/* .shadow {
+  height: 40px;
+  width:210px;
+  background-color: rgba(152,130,0,0,2);
+  position: absolute;
+  bottom: 50%;
+  right: 50%;
+  border-radius: 50%;
+  z-index: 100;
+} */
